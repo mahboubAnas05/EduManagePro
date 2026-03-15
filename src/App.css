@@ -50,3 +50,7 @@
   transition: 900ms;
   scale: 2;
 }
+.hoverBtn:hover{
+  background-color: #01c38d;
+  color: white;
+}

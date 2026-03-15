@@ -1,7 +1,9 @@
 import SignIn from "../boutiqueComponent/signIn"
+import Welcome from "../boutiqueComponent/welcome"
 export default function Home(){
     return(
         <div>
+            <Welcome/>
             <section id="aPropos">
                 <div className="text-center">
                     <h1 

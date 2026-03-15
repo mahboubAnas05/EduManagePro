@@ -1,6 +1,6 @@
 export default function Welcome(){
     return(
-        <div className="text-light mx-2 pb-5 d-md-flex gap-4 justify-content-around" style={{
+        <section id="home" className="text-light mx-2 pb-5 d-md-flex gap-4 justify-content-around" style={{
             // backgroundImage : "montainIcon.jpg"
             margin : "150px 0 0"
         }}>
@@ -20,6 +20,6 @@ export default function Welcome(){
                 }} alt="" />
             </div>
 
-        </div>
+        </section>
     )
 }

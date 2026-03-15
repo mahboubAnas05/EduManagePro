@@ -1,5 +1,7 @@
 import { useState } from "react"
 import { Link } from "react-router-dom"
+import { HashLink } from "react-router-hash-link"
+import Home from "../boutiquePage/home"
 
 export default function Navbar(){
     const [openBurgger, setOpenBurgger] = useState(false)
@@ -21,16 +23,27 @@ export default function Navbar(){
                         </span>
                         <b style={{
                             borderBottom : "3px solid #01c38d"
-                        }}><i>EduManagePro</i></b>
+                        }}>
+                            <i>
+                                <HashLink to={'/#home'} className="text-light text-decoration-none">
+                                   EduManagePro
+                                </HashLink>
+                            </i>
+                        </b>
                     </h1>
                 </div>
-                <div className="d-md-flex d-none gap-5 align-items-center">
-                    <div><Link className="hoverNav text-decoration-none">home</Link></div>
+                <div className="d-md-flex d-none gap-4 align-items-center">
+                    <div><HashLink to={"/#home"} className="hoverNav text-decoration-none">home</HashLink></div>
                     <div><Link className="hoverNav text-decoration-none">Liste des étudiants</Link></div>
-                    <div><Link className="hoverNav text-decoration-none">A propos</Link></div>
-                    <div><Link className="btn text-decoration-none text-light w-100" style={{
+                    <div><HashLink to={'/#aPropos'} className="hoverNav text-decoration-none">A propos</HashLink></div>
+                    <div className="d-flex align-items-center gap-1">
+                        <HashLink to={'/#Sign_In'} className="hoverBtn btn text-decoration-none"style={{
+                        border : "1px solid #01c38d", color : "#01c38d"
+                    }}>SignUp</HashLink>
+                        <Link className="btn text-decoration-none text-light w-100" style={{
                         background : "#01c38d"
-                    }}>LogIn</Link></div>
+                    }}>LogIn</Link>
+                    </div>
                 </div>
                 <div className="d-md-none">
                     <button style={{
@@ -48,12 +61,17 @@ export default function Navbar(){
             </div>
 
             <div className={`${!openBurgger ? 'd-none' : 'd-block d-md-none'}`}>
-                <div className="p-3"><Link className="hoverNav text-decoration-none">home</Link></div>
+                <div className="p-3"><HashLink to={'/#home'} className="hoverNav text-decoration-none">home</HashLink></div>
                 <div className="p-3"><Link className="hoverNav text-decoration-none">Liste des étudiants</Link></div>
-                <div className="p-3"><Link className="hoverNav text-decoration-none">A propos</Link></div>
-                <div className="p-3"><Link className="btn text-decoration-none text-light w-100" style={{
+                <div className="p-3"><HashLink to={'/#aPropos'} className="hoverNav text-decoration-none">A propos</HashLink></div>
+                <div className="p-3">
+                    <HashLink to={'/#Sign_In'} className="hoverBtn btn text-decoration-none mb-3 w-100"style={{
+                        border : "1px solid #01c38d", color : "#01c38d"
+                    }}>SignUp</HashLink>
+                    <Link className="btn text-decoration-none text-light w-100" style={{
                     background : "#01c38d"
-                }}>LogIn</Link></div>
+                }}>LogIn</Link>
+                </div>
 
             </div>
         </nav>
